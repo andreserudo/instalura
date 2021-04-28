@@ -12,8 +12,12 @@ const authService = (ctx) => {
   };
 
   const hasActiveSession = () => {
-    const tokenVerified = jwt.verify(token);
-    console.log(tokenVerified);
+    // const tokenVerified = jwt.verify(token);
+    if (!token) {
+      return false;
+    }
+
+    return true;
   };
 
   return {
